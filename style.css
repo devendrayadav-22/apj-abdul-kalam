@@ -1,0 +1,84 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-heading: "Sora", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --boder: 2px solid;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-heading);
+  line-height: 1.7;
+}
+
+.main-container {
+  border: 5px solid black;
+  background-color: rgb(236, 255, 255);
+  max-width: 900px;
+  border-radius: 1rem;
+  margin: 0.6%;
+  padding: 1rem 2rem;
+}
+#heading {
+  text-align: center;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgb(151, 146, 146);
+}
+.top-container {
+  display: flex;
+  flex-direction: flex-end;
+  justify-content: space-around;
+  margin: 33px;
+}
+.top-container img {
+  width: 350px;
+  border-radius: 80px;
+  box-shadow: 2px 9px 15px rgba(0, 0, 0, 0.475);
+  border: 4px solid rgb(255, 242, 223);
+  position: static;
+}
+.name {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 1rem;
+}
+
+.content-heading {
+  margin: 19px 5px;
+  padding: 5px 68px;
+  text-align: center;
+  box-shadow: 2px 3px 3px rgb(146, 84, 84);
+}
+.content-heading:hover {
+  box-shadow: 3px 4px 8px rgb(187, 85, 85);
+  cursor: pointer;
+}
+.intro p {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.biographies ul {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.biographies a {
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-decoration: none;
+}
