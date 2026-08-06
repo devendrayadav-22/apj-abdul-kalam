@@ -9,7 +9,6 @@
 :root {
   --font-heading: "Sora", sans-serif;
   --font-mono: "Space Mono", monospace;
-  --boder: 2px solid;
 }
 
 html {
@@ -40,7 +39,6 @@ body {
 }
 .top-container {
   display: flex;
-  flex-direction: flex-end;
   justify-content: space-around;
   margin: 33px;
 }
@@ -49,7 +47,6 @@ body {
   border-radius: 80px;
   box-shadow: 2px 9px 15px rgba(0, 0, 0, 0.475);
   border: 4px solid rgb(255, 242, 223);
-  position: static;
 }
 .name {
   display: flex;
@@ -67,18 +64,60 @@ body {
   box-shadow: 3px 4px 8px rgb(187, 85, 85);
   cursor: pointer;
 }
-.intro p {
+.content {
   font-family: var(--font-mono);
   font-size: 1.2rem;
-  line-height: 1.4;
+  word-spacing: 2px;
+  /* line-height: 1.4; */
 }
-.biographies ul {
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
+
 .biographies a {
   font-size: 1.45rem;
   font-weight: 700;
   text-decoration: none;
+}
+.biographies a:hover{
+  color: rgb(225, 62, 62);
+}
+@media(max-width : 767px){
+  .main-container{
+    max-width: 95vw;
+  }
+  #heading {
+    font-size: 25px;
+  }
+  .top-container{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name{
+    margin-top: 22px;
+  }
+}
+@media(max-width : 480px){
+  .main-container{
+    max-width: 98vw;
+  }
+    #heading {
+    font-size: 25px;
+  }
+  .top-container img{
+    width: 250px;
+  }
+    .name{
+    margin-top: 22px;
+    font-size: 12px;
+  }
+  .content-heading{
+    font-size: 19px;
+  }
+  .content{
+    line-height: 1.4;
+   word-spacing: 1.5px;
+   font-size: 1rem;
+  }
+  .biographies a{
+    font-size: 1.2em;
+  }
 }
