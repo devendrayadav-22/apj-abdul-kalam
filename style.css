@@ -15,7 +15,6 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
-
 body {
   background: #f0f0f0;
   display: flex;
@@ -23,6 +22,31 @@ body {
   font-family: var(--font-heading);
   line-height: 1.7;
 }
+#welcome-screen{
+  position: fixed;
+  inset : 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5264);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+  animation: fadeOut 3s ease forwards;
+  animation-delay:2s ;
+}
+#welcome-screen h1{
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: zoomIn 1.2s ease forwards;
+}
+#welcome-screen p {
+  font-size: 1.2rem;
+  animation: slideUp 1s ease forwards;
+}
+
 
 .main-container {
   border: 5px solid black;
@@ -31,6 +55,9 @@ body {
   border-radius: 1rem;
   margin: 0.6%;
   padding: 1rem 2rem;
+
+  /* animation: zoomIn 4s ease forwards; */
+
 }
 #heading {
   text-align: center;
@@ -41,7 +68,10 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 33px;
+
+  animation: zoomIn 4s ease forwards;
 }
+
 .top-container img {
   width: 350px;
   border-radius: 80px;
@@ -79,6 +109,38 @@ body {
 .biographies a:hover{
   color: rgb(225, 62, 62);
 }
+
+@keyframes zoomIn{
+  from{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp{
+  from{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    visibility: hidden;
+  }
+} 
+
 @media(max-width : 767px){
   .main-container{
     max-width: 95vw;
@@ -96,6 +158,12 @@ body {
   }
 }
 @media(max-width : 480px){
+  #welcome-screen h1{
+    font-size: 2rem;
+  }
+  #welcome-screen p{
+    font-size: 0.8rem;
+  }
   .main-container{
     max-width: 98vw;
   }
