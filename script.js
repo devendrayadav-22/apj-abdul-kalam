@@ -6,6 +6,7 @@ const revealEle = document.querySelectorAll('.reveal');
 const progressBar = document.querySelector('.progress-bar');
 const percentValue = document.querySelector('#percent-value');
 const scrollBackButton = document.querySelector('.top-scroll');
+const changeMode = document.querySelector('.change-mode');
 // const introContent = document.querySelectorAll('.intro-content');
 
 // remove the welcomscreen
@@ -40,13 +41,29 @@ const progBar = function(){
     else{
         progressBar.style.backgroundColor = "rgb(151, 26, 26)"
     }
-
     percentValue.textContent = Math.trunc(scrollPercent);
+
+    if(window.scrollY >= 300){
+        scrollBackButton.style.opacity = 1;
+        scrollBackButton.style.visibility = "visible";
+    }
+    else{
+                scrollBackButton.style.opacity = 0;
+        scrollBackButton.style.visibility = "hidden";
+    }
 }
 window.addEventListener('scroll', progBar);
 progBar();
 
+//scroll bar button
+//for use this check accessibility -->visula effect -> animation ->on
 
+scrollBackButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior : "smooth"
+    });
+});
 
 // const revealOnScroll = function(){
 //   revealEle.forEach((ele) => {
